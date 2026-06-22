@@ -17,4 +17,9 @@ class TinySequenceLM(nn.Module):
 model = TinySequenceLM(vocab_size, block_size)
 logits = model(xb)
 print("logits.shape:", logits.shape)
-logits.shape: torch.Size([64, 32, 65])
+
+
+def sequence_cross_entropy(logits, targets):
+    return F.cross_entropy(logits.transpose(1, 2), targets)
+
+print("initial loss:", sequence_cross_entropy(logits, yb).item())
