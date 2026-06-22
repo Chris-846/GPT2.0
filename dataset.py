@@ -35,10 +35,4 @@ loader = DataLoader(dataset, batch_size=64, shuffle=True)
 xb, yb = next(iter(loader))
 print("xb.shape:", xb.shape)
 print("yb.shape:", yb.shape)
-xb.shape: torch.Size([64, 32])
-yb.shape: torch.Size([64, 32])
 
-
-xb[0]
-tensor([50, 50,  1, 14, 53, 46, 43, 51, 47, 39, 10,  1, 47, 44,  1, 63, 53, 59,
-         1, 46, 39, 42,  0, 40, 59, 58,  1, 50, 53, 53, 49, 43])
