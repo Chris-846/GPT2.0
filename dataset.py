@@ -35,6 +35,8 @@ loader = DataLoader(dataset, batch_size=64, shuffle=True)
 xb, yb = next(iter(loader))
 print("xb.shape:", xb.shape)
 print("yb.shape:", yb.shape)
+xb.shape: torch.Size([64, 32])
+yb.shape: torch.Size([64, 32])
 
 
 xb[0]
