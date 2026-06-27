@@ -2,6 +2,9 @@ import torch
 import torch.nn as nn
 from dataset import vocab_size, block_size
 from selfatt import SingleHeadSelfAttention
+from torch.utils.data import DataLoader
+
+dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 class TinyAttentionLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
