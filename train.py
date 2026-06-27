@@ -1,6 +1,7 @@
 import torch
 from dataset import vocab_size, block_size
 from tiny import sequence_cross_entropy
+from tiny import TinySequenceLM
 
 def train_one_epoch(model, loader, optimizer, device, max_steps=None):
     model.train()
