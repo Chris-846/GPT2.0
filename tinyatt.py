@@ -19,5 +19,4 @@ class TinyAttentionLM(nn.Module):
         return logits
 
 model = TinyAttentionLM(vocab_size, block_size)
-logits = model(xb)
 print("logits.shape:", logits.shape)
