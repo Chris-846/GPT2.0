@@ -1,3 +1,5 @@
+import torch
+
 def sample_sequence_model(model, block_size, stoi, itos, device, start_text="ROMEO:", max_new_tokens=300):
     model.eval()
     context = torch.zeros((1, block_size), dtype=torch.long, device=device)
