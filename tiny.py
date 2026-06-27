@@ -20,6 +20,8 @@ class TinySequenceLM(nn.Module):
         return logits
 
 model = TinySequenceLM(vocab_size, block_size)
+xb = next(iter(dataloader))
+logits = model(xb)
 print("logits.shape:", logits.shape)
 
 
