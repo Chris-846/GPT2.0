@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 class TinySequenceLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
         super().__init__()
