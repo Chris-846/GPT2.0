@@ -1,5 +1,6 @@
 import torch
 import torch.nn.functional as F
+from dataset import vocab_size, block_size
 
 def sample_sequence_model(model, block_size, stoi, itos, device, start_text="ROMEO:", max_new_tokens=300):
     model.eval()
