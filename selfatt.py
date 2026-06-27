@@ -1,3 +1,6 @@
+import torch
+import torch.nn as nn
+
 class SingleHeadSelfAttention(nn.Module):
     def __init__(self, emb_dim, block_size):
         super().__init__()
