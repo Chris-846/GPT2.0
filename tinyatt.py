@@ -1,4 +1,6 @@
+import torch
 import torch.nn as nn
+from dataset import vocab_size, block_size
 
 class TinyAttentionLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
