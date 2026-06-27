@@ -24,6 +24,7 @@ class TinySequenceLM(nn.Module):
 
 model = TinySequenceLM(vocab_size, block_size)
 xb = next(iter(dataloader))
+yb = next(iter(dataloader))
 logits = model(xb)
 print("logits.shape:", logits.shape)
 
