@@ -18,7 +18,6 @@ class TinySequenceLM(nn.Module):
         return logits
 
 model = TinySequenceLM(vocab_size, block_size)
-logits = model(xb)
 print("logits.shape:", logits.shape)
 
 
