@@ -1,3 +1,6 @@
+import torch
+from dataset import vocab_size, block_size
+
 def train_one_epoch(model, loader, optimizer, device, max_steps=None):
     model.train()
     total_loss, total_count = 0.0, 0
