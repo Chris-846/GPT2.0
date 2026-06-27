@@ -1,3 +1,5 @@
+import torch.nn as nn
+
 class Head(nn.Module):
     def __init__(self, emb_dim, head_size, block_size, dropout=0.1):
         super().__init__()
