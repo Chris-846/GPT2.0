@@ -2,6 +2,13 @@ import torch
 import torch.nn.functional as F
 from dataset import vocab_size, block_size
 
+chars = sorted(list(set("abcdefghijklmnopqrstuvwxyz ")))
+stoi = {ch:i for i, ch in enumerate(chars)}
+itos = {i:ch for i, ch in enumerate(chars)}
+
+import torch
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
 model = TinyGPT(vocab_size, block_size)
 
 def sample_sequence_model(model, block_size, stoi, itos, device, start_text="ROMEO:", max_new_tokens=300):
