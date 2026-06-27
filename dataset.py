@@ -5,7 +5,11 @@ from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
 if not Path("input.txt").exists():
-    !wget -q https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt
+    import requests
+    url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+    response = requests.get(url)
+    with open("input.txt", "wb") as f:
+        f.write(response.content)
 
 text = open("input.txt", "r", encoding="utf-8").read()
 chars = sorted(list(set(text)))
