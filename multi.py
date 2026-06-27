@@ -89,8 +89,6 @@ class TinyGPT(nn.Module):
         return logits
 
 model = TinyGPT(vocab_size, block_size)
-xb = next(iter(dataloader))
-logits = model(xb)
 print("logits.shape:", logits.shape)
 
 
