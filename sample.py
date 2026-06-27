@@ -1,6 +1,7 @@
 import torch
 import torch.nn.functional as F
 from dataset import vocab_size, block_size
+from multi import TinyGPT
 
 chars = sorted(list(set("abcdefghijklmnopqrstuvwxyz ")))
 stoi = {ch:i for i, ch in enumerate(chars)}
