@@ -5,7 +5,7 @@ from dataset import vocab_size, block_size
 from torch.utils.data import Dataset, DataLoader
 
 
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
 
 class Head(nn.Module):
     def __init__(self, emb_dim, head_size, block_size, dropout=0.1):
