@@ -4,6 +4,19 @@ import torch.nn.functional as F
 from dataset import vocab_size, block_size
 from torch.utils.data import Dataset, DataLoader
 
+
+class MyDataset(Dataset):
+    def __init__(self):
+        self.data = torch.randint(0, 65, (1000, 128)) 
+        self.labels = torch.randint(0, 65, (1000, 128))
+
+    def __len__(self):
+        return len(self.data)
+
+    def __getitem__(self, idx):
+        return self.data[idx], self.labels[idx]
+
+
 class Head(nn.Module):
     def __init__(self, emb_dim, head_size, block_size, dropout=0.1):
         super().__init__()
