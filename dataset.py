@@ -6,7 +6,7 @@ from pathlib import Path
 
 if not Path("anne.txt").exists():
     import requests
-    url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
+    url = "https://github.com/Chris-846/GPT2.0/blob/main/anne.txt"
     response = requests.get(url)
     with open("anne.txt", "wb") as f:
         f.write(response.content)
