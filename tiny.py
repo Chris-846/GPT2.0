@@ -4,8 +4,6 @@ import torch.nn.functional as F
 from dataset import vocab_size, block_size
 from torch.utils.data import Dataset, DataLoader
 
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
-
 class TinySequenceLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
         super().__init__()
@@ -21,6 +19,10 @@ class TinySequenceLM(nn.Module):
         h = tok + pos
         logits = self.lm_head(h)                 # (B, T, V)
         return logits
+
+
+dataset = MyDataset()
+dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
 
 model = TinySequenceLM(vocab_size, block_size)
 xb = next(iter(dataloader))
