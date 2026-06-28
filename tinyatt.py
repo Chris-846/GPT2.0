@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from dataset import vocab_size, block_size
 from selfatt import SingleHeadSelfAttention
-from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, DataLoader
 
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
