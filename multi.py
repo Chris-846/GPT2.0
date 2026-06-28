@@ -4,9 +4,6 @@ import torch.nn.functional as F
 from dataset import vocab_size, block_size
 from torch.utils.data import Dataset, DataLoader
 
-
-dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
-
 class Head(nn.Module):
     def __init__(self, emb_dim, head_size, block_size, dropout=0.1):
         super().__init__()
@@ -92,6 +89,9 @@ class TinyGPT(nn.Module):
         logits = self.lm_head(h)
         return logits
 
+
+dataset = MyDataset()
+dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
 
 model = TinyGPT(vocab_size, block_size)
 xb = next(iter(dataloader))
