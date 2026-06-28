@@ -4,8 +4,6 @@ from tiny import sequence_cross_entropy
 from tiny import TinySequenceLM
 from torch.utils.data import Dataset, DataLoader
 
-loader = DataLoader(dataset, batch_size=32, shuffle=True)
-
 def train_one_epoch(model, loader, optimizer, device, max_steps=None):
     model.train()
     total_loss, total_count = 0.0, 0
@@ -21,6 +19,9 @@ def train_one_epoch(model, loader, optimizer, device, max_steps=None):
         if max_steps is not None and step + 1 >= max_steps:
             break
     return total_loss / total_count
+
+dataset = MyDataset()
+dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
 
 device = "cuda" if torch.cuda.is_available() else "cpu"
 model = TinySequenceLM(vocab_size, block_size).to(device)
