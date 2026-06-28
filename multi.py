@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from dataset import vocab_size, block_size
-from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, DataLoader
 
 
 dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
