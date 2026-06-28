@@ -2,7 +2,7 @@ import torch
 from dataset import vocab_size, block_size
 from tiny import sequence_cross_entropy
 from tiny import TinySequenceLM
-from torch.utils.data import DataLoader
+from torch.utils.data import Dataset, DataLoader
 
 loader = DataLoader(dataset, batch_size=32, shuffle=True)
 
