@@ -5,7 +5,6 @@ from selfatt import SingleHeadSelfAttention
 from torch.utils.data import Dataset, DataLoader
 from multi import MyDataset
 
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 class TinyAttentionLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
@@ -24,6 +23,9 @@ class TinyAttentionLM(nn.Module):
         h = self.attn(h)
         logits = self.lm_head(h)
         return logits
+
+dataset = MyDataset()
+dataloader = DataLoader(Dataset, batch_size=32, shuffle=True)
 
 model = TinyAttentionLM(vocab_size, block_size)
 xb = next(iter(dataloader))
