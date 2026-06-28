@@ -4,14 +4,14 @@ import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from pathlib import Path
 
-if not Path("input.txt").exists():
+if not Path("anne.txt").exists():
     import requests
     url = "https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt"
     response = requests.get(url)
-    with open("input.txt", "wb") as f:
+    with open("anne.txt", "wb") as f:
         f.write(response.content)
 
-text = open("input.txt", "r", encoding="utf-8").read()
+text = open("anne.txt", "r", encoding="utf-8").read()
 chars = sorted(list(set(text)))
 stoi = {ch: i for i, ch in enumerate(chars)}
 itos = {i: ch for ch, i in stoi.items()}
