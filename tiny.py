@@ -3,6 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 from dataset import vocab_size, block_size
 from torch.utils.data import Dataset, DataLoader
+from multi import MyDataset
 
 class TinySequenceLM(nn.Module):
     def __init__(self, vocab_size, block_size, emb_dim=64):
